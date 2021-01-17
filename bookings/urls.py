@@ -27,4 +27,5 @@ urlpatterns = [
          auth_views.PasswordResetCompleteView.as_view(template_name="bookings/password_reset_done.html"), name="password_reset_complete"),
 
     path('about/', views.about, name="about"),
+    path('403code/', views.unauthorizedpage, name="403code"),
 ]

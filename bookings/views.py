@@ -56,8 +56,8 @@ def logoutUser(request):
     return redirect('login')
 
 
-@login_required(login_url='login')
-@admin_only
+# @login_required(login_url='login')
+# @admin_only
 def home(request):
     orders = Order.objects.all()
     customers = Customer.objects.all()
@@ -175,3 +175,6 @@ def deleteOrder(request, pk):
 @allowed_users(allowed_roles=['admin'])
 def about(request):
     return render(request, 'bookings/about.html')
+
+def unauthorizedpage(request):
+    return render(request, 'bookings/403code.html')
